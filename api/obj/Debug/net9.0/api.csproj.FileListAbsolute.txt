@@ -163,3 +163,8 @@ C:\JunkProjects\FinShark\api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Dra
 C:\JunkProjects\FinShark\api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\JunkProjects\FinShark\api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\JunkProjects\FinShark\api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\JunkProjects\FinShark\api\obj\Debug\net9.0\api.sourcelink.json
+C:\JunkProjects\FinShark\api\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\JunkProjects\FinShark\api\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\JunkProjects\FinShark\api\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\JunkProjects\FinShark\api\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
