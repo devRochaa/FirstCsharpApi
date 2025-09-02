@@ -1,4 +1,2 @@
 * linguist-vendored
 *.typescript linguist-vendored=false
-
-*.csharp linguist-detectable=true
