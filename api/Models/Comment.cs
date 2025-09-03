@@ -18,5 +18,7 @@ namespace api.Models
         //Navigation Property
         //para poder usar exemplo: Stock.Id
         public Stock? Stock { get; set; }
+        public string? AppUserId { get; set; } = string.Empty;
+        public AppUser? AppUser { get; set; }
     }
 }
