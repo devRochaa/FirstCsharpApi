@@ -1,9 +1,8 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { UserProfile } from "../Models/User";
 import { useNavigate } from "react-router-dom";
-import { loginAPI, registerAPI } from "../Services/AuthService";
+import { loginAPI, registerAPI } from "../Services/Auth";
 import { toast } from "react-toastify";
-import React from "react";
 import axios from "axios";
 
 type UserContextType = {
@@ -46,17 +45,17 @@ export const UserProvider = ({ children }: Props) => {
         if (res) {
           localStorage.setItem("token", res?.data.token);
           const userObj = {
-            userName: res?.data.userName,
+            username: res?.data.username,
             email: res?.data.email,
           };
           localStorage.setItem("user", JSON.stringify(userObj));
           setToken(res?.data.token!);
           setUser(userObj!);
-          toast.success("Login Success!");
+          toast.success("Login Success");
           navigate("/search");
         }
       })
-      .catch((e) => toast.warning("Server error occured"));
+      .catch((e) => toast.warning("Server Error occured"));
   };
 
   const loginUser = async (username: string, password: string) => {
@@ -65,17 +64,17 @@ export const UserProvider = ({ children }: Props) => {
         if (res) {
           localStorage.setItem("token", res?.data.token);
           const userObj = {
-            userName: res?.data.userName,
+            username: res?.data.username,
             email: res?.data.email,
           };
-          localStorage.setItem("user", JSON.stringify(userObj));
+          localStorage.setItem("user", JSON.stringify(user));
           setToken(res?.data.token!);
           setUser(userObj!);
-          toast.success("Login Success!");
+          toast.success("Login Success");
           navigate("/search");
         }
       })
-      .catch((e) => toast.warning("Server error occured"));
+      .catch((e) => toast.warning("Server Error occured"));
   };
 
   const isLoggedIn = () => {
@@ -85,8 +84,8 @@ export const UserProvider = ({ children }: Props) => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    setUser(null);
     setToken("");
+    setUser(null);
     navigate("/");
   };
 

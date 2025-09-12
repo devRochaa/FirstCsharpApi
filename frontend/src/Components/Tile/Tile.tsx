@@ -1,9 +1,9 @@
 import React from "react";
 
-type Props = {
+interface Props {
   title: string;
   subTitle: string;
-};
+}
 
 const Tile = ({ title, subTitle }: Props) => {
   return (

@@ -1,8 +1,8 @@
 export interface CompanySearch {
   currency: string;
-  exchangeShortName: string;
+  exchangeFullName: string;
   name: string;
-  stockExchange: string;
+  exchange: string;
   symbol: string;
 }
 
@@ -247,86 +247,53 @@ export interface CompanyCashFlow {
 }
 
 export interface CompanyKeyMetrics {
-  revenuePerShareTTM: number;
-  netIncomePerShareTTM: number;
-  operatingCashFlowPerShareTTM: number;
-  freeCashFlowPerShareTTM: number;
-  cashPerShareTTM: number;
-  bookValuePerShareTTM: number;
-  tangibleBookValuePerShareTTM: number;
-  shareholdersEquityPerShareTTM: number;
-  interestDebtPerShareTTM: number;
-  marketCapTTM: number;
-  enterpriseValueTTM: number;
-  peRatioTTM: number;
-  priceToSalesRatioTTM: number;
-  pocfratioTTM: number;
-  pfcfRatioTTM: number;
-  pbRatioTTM: number;
-  ptbRatioTTM: number;
-  evToSalesTTM: number;
-  enterpriseValueOverEBITDATTM: number;
-  evToOperatingCashFlowTTM: number;
-  evToFreeCashFlowTTM: number;
-  earningsYieldTTM: number;
-  freeCashFlowYieldTTM: number;
-  debtToEquityTTM: number;
-  debtToAssetsTTM: number;
-  netDebtToEBITDATTM: number;
-  currentRatioTTM: number;
-  interestCoverageTTM: number;
-  incomeQualityTTM: number;
-  dividendYieldTTM: number;
-  dividendYieldPercentageTTM: number;
-  payoutRatioTTM: number;
-  salesGeneralAndAdministrativeToRevenueTTM: number;
-  researchAndDevelopementToRevenueTTM: number;
-  intangiblesToTotalAssetsTTM: number;
-  capexToOperatingCashFlowTTM: number;
-  capexToRevenueTTM: number;
-  capexToDepreciationTTM: number;
-  stockBasedCompensationToRevenueTTM: number;
-  grahamNumberTTM: number;
-  roicTTM: number;
-  returnOnTangibleAssetsTTM: number;
-  grahamNetNetTTM: number;
-  workingCapitalTTM: number;
-  tangibleAssetValueTTM: number;
-  netCurrentAssetValueTTM: number;
-  investedCapitalTTM: number;
-  averageReceivablesTTM: number;
-  averagePayablesTTM: number;
-  averageInventoryTTM: number;
-  daysSalesOutstandingTTM: number;
-  daysPayablesOutstandingTTM: number;
-  daysOfInventoryOnHandTTM: number;
-  receivablesTurnoverTTM: number;
-  payablesTurnoverTTM: number;
-  inventoryTurnoverTTM: number;
-  roeTTM: number;
-  capexPerShareTTM: number;
-  dividendPerShareTTM: number;
-  debtToMarketCapTTM: number;
-}
-
-export interface CompanyHistoricalDividend {
-  symbol: string;
-  historical: Dividend[];
-}
-
-export interface Dividend {
-  date: string;
-  label: string;
-  adjDividend: number;
-  dividend: number;
-  recordDate: string;
-  paymentDate: string;
-  declarationDate: string;
+  symbol: string
+  marketCap: number
+  enterpriseValueTTM: number
+  evToSalesTTM: number
+  evToOperatingCashFlowTTM: number
+  evToFreeCashFlowTTM: number
+  evToEBITDATTM: number
+  netDebtToEBITDATTM: number
+  currentRatioTTM: number
+  incomeQualityTTM: number
+  grahamNumberTTM: number
+  grahamNetNetTTM: number
+  taxBurdenTTM: number
+  interestBurdenTTM: number
+  workingCapitalTTM: number
+  investedCapitalTTM: number
+  returnOnAssetsTTM: number
+  operatingReturnOnAssetsTTM: number
+  returnOnTangibleAssetsTTM: number
+  returnOnEquityTTM: number
+  returnOnInvestedCapitalTTM: number
+  returnOnCapitalEmployedTTM: number
+  earningsYieldTTM: number
+  freeCashFlowYieldTTM: number
+  capexToOperatingCashFlowTTM: number
+  capexToDepreciationTTM: number
+  capexToRevenueTTM: number
+  salesGeneralAndAdministrativeToRevenueTTM: number
+  researchAndDevelopementToRevenueTTM: number
+  stockBasedCompensationToRevenueTTM: number
+  intangiblesToTotalAssetsTTM: number
+  averageReceivablesTTM: number
+  averagePayablesTTM: number
+  averageInventoryTTM: number
+  daysOfSalesOutstandingTTM: number
+  daysOfPayablesOutstandingTTM: number
+  daysOfInventoryOutstandingTTM: number
+  operatingCycleTTM: number
+  cashConversionCycleTTM: number
+  freeCashFlowToEquityTTM: number
+  freeCashFlowToFirmTTM: number
+  tangibleAssetValueTTM: number
+  netCurrentAssetValueTTM: number
 }
 
 export interface CompanyCompData {
   symbol: string;
-  peersList: string[];
 }
 
 export interface CompanyTenK {

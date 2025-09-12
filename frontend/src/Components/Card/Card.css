@@ -1,0 +1,32 @@
+/* .card{
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 70dvh;
+  padding: 2%;
+  overflow: hidden;
+  background-color: rgb(226, 239, 252);
+}
+
+.card img{
+  width: 12vw;
+  height: 24vh;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.details{
+  text-align: center;
+}
+
+.info{
+  display: flex;
+} */
+
+.card{
+  margin-bottom: 1%;
+}

@@ -1,8 +1,8 @@
-import React, { SyntheticEvent } from "react";
-import { Link } from "react-router-dom";
+import React, { JSX, SyntheticEvent } from "react";
 import "./Card.css";
 import { CompanySearch } from "../../company";
-import AddPortfolio from "../Portfolio/AddPortfolio/AddPortfolio";
+import AddPortifolio from "../Portifolio/AddPortifolio/AddPortfolio";
+import { Link } from "react-router-dom";
 
 interface Props {
   id: string;
@@ -17,21 +17,21 @@ const Card: React.FC<Props> = ({
 }: Props): JSX.Element => {
   return (
     <div
-      className="flex flex-col items-center justify-between w-full p-6 bg-slate-100 rounded-lg md:flex-row"
+      className="flex flex-col items-center justify-between w-full p-6 bg-slate-100 rounded-lg md:flex-row card"
       key={id}
       id={id}
     >
       <Link
         to={`/company/${searchResult.symbol}/company-profile`}
-        className="font-bold text-center text-veryDarkViolet md:text-left"
+        className="font-bold text-center text-black md:text-left"
       >
         {searchResult.name} ({searchResult.symbol})
       </Link>
-      <p className="text-veryDarkBlue">{searchResult.currency}</p>
+      <p className="text-black">{searchResult.currency}</p>
       <p className="font-bold text-veryDarkBlue">
-        {searchResult.exchangeShortName} - {searchResult.stockExchange}
+        {searchResult.exchangeFullName} - {searchResult.exchange}
       </p>
-      <AddPortfolio
+      <AddPortifolio
         onPortfolioCreate={onPortfolioCreate}
         symbol={searchResult.symbol}
       />

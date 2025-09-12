@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { CompanyIncomeStatement } from "../../company";
+import { getIncomentStatement } from "../../api";
 import { useOutletContext } from "react-router-dom";
 import Table from "../Table/Table";
-import { CompanyIncomeStatement } from "../../company";
-import { getIncomeStatement } from "../../api";
-import Spinner from "../Spinners/Spinner";
+import Spinner from "../Spinner/Spinner";
 import {
   formatLargeMonetaryNumber,
   formatRatio,
-} from "../../Helpers/NumberFormatting";
+} from "../../Helpers/NumberFormating";
 
-type Props = {};
+interface Props {}
 
 const configs = [
   {
@@ -81,19 +81,24 @@ const IncomeStatement = (props: Props) => {
   const ticker = useOutletContext<string>();
   const [incomeStatement, setIncomeStatement] =
     useState<CompanyIncomeStatement[]>();
+
   useEffect(() => {
-    const getRatios = async () => {
-      const result = await getIncomeStatement(ticker!);
+    const incomeStatementFetch = async () => {
+      const result = await getIncomentStatement(ticker);
       setIncomeStatement(result!.data);
     };
-    getRatios();
+    incomeStatementFetch();
   }, []);
   return (
     <>
       {incomeStatement ? (
-        <Table config={configs} data={incomeStatement} />
+        <>
+          <Table config={configs} data={incomeStatement} />
+        </>
       ) : (
-        <Spinner />
+        <>
+          <Spinner />
+        </>
       )}
     </>
   );

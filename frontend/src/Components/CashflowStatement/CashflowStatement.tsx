@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
 import { CompanyCashFlow } from "../../company";
-import { getCashFlow } from "../../api";
+import { useOutletContext } from "react-router-dom";
+import { getCashFlowStatement } from "../../api";
 import Table from "../Table/Table";
-import Spinner from "../Spinners/Spinner";
-import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormatting";
+import Spinner from "../Spinner/Spinner";
+import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormating";
 
 type Props = {};
 
@@ -52,21 +52,25 @@ const config = [
   },
 ];
 
-const CashflowStatement = (props: Props) => {
+const CashFlowStatement = (props: Props) => {
   const ticker = useOutletContext<string>();
-  const [cashFlowData, setCashFlowData] = useState<CompanyCashFlow[]>();
+  const [cashflowData, setCashflow] = useState<CompanyCashFlow[]>();
   useEffect(() => {
-    const getRatios = async () => {
-      const result = await getCashFlow(ticker);
-      setCashFlowData(result!.data);
+    const fetchCashflow = async () => {
+      const result = await getCashFlowStatement(ticker!);
+      setCashflow(result!.data);
     };
-    getRatios();
+    fetchCashflow();
   }, []);
-  return cashFlowData ? (
-    <Table config={config} data={cashFlowData}></Table>
-  ) : (
-    <Spinner />
+  return (
+    <>
+      {cashflowData ? (
+        <Table config={config} data={cashflowData} />
+      ) : (
+        <Spinner />
+      )}
+    </>
   );
 };
 
-export default CashflowStatement;
+export default CashFlowStatement;

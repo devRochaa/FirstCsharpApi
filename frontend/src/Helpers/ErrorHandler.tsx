@@ -10,11 +10,11 @@ export const handleError = (error: any) => {
       }
     } else if (typeof err?.data.errors === "object") {
       for (let e in err?.data.errors) {
-        toast.warning(err.data.errors[e][0]);
+        toast.warning(err.data.errrors[e][0]);
       }
     } else if (err?.data) {
       toast.warning(err.data);
-    } else if (err?.status == 401) {
+    } else if (err?.status === 401) {
       toast.warning("Please login");
       window.history.pushState({}, "LoginPage", "/login");
     } else if (err) {
