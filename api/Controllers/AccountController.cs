@@ -39,11 +39,11 @@ namespace api.Controllers
             return Ok(
                 new NewUserDto
                 {
-                    UserName = user.UserName,
+                    Username = user.UserName,
                     Email = user.Email,
                     Token = _tokenService.CreateToken(user)
                 }
-            ); 
+            );
         }
 
         [HttpPost("register")]
@@ -70,12 +70,12 @@ namespace api.Controllers
                         return Ok(
                             new NewUserDto
                             {
-                                UserName = appUser.UserName!,
+                                Username = appUser.UserName!,
                                 Email = appUser.Email!,
                                 Token = _tokenService.CreateToken(appUser)
                             }
                         );
-                    }                
+                    }
                     return StatusCode(500, roleResult.Errors); //se nao funcionar
                 }
                 return StatusCode(500, createdUser.Errors); //se nao funcionar

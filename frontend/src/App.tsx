@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import "react-toastify/dist/ReactToastfy.css";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { ToastContainer } from "react-toastify";
 import { UserProvider } from "./Context/useAuth";
@@ -11,7 +11,7 @@ function App() {
       <UserProvider>
         <Navbar />
         <Outlet />
-        <ToastContainer />
+        <ToastContainer autoClose={2000} closeOnClick pauseOnHover={false} />
       </UserProvider>
     </>
   );
