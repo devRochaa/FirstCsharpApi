@@ -14,9 +14,15 @@ type RegisterFormsInput = {
 };
 
 const validation = Yup.object().shape({
-  email: Yup.string().required("Email is required"),
-  userName: Yup.string().required("Username is required"),
-  password: Yup.string().required("Password is required."),
+  email: Yup.string()
+        .required("Email is required")
+        .email("E=mail invalid format"),
+  userName: Yup.string()
+            .required("Username is required")
+            .min(3, "Username must be at least 3 characters"),
+  password: Yup.string()
+            .required("Password is required.")
+            .min(3, "Password must be at least 3 characters"),
 });
 
 const RegisterPage = (props: Props) => {
