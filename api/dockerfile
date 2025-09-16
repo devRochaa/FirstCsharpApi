@@ -1,0 +1,17 @@
+# Usar imagem oficial do .NET
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+WORKDIR /app
+EXPOSE 5000
+
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+COPY ["api/api.csproj", "api/"]
+RUN dotnet restore "api/api.csproj"
+COPY . .
+WORKDIR "/src/api"
+RUN dotnet publish -c Release -o /app/out
+
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/out .
+ENTRYPOINT ["dotnet", "api.dll"]

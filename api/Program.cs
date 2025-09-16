@@ -120,5 +120,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Pega a porta do Render ou usa 5000 por padrão
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
+
 app.Run();
 
