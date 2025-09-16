@@ -1,7 +1,8 @@
 # Imagem oficial do .NET Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
-EXPOSE 8080  # Porta padrão do Render
+# Porta padrão do Render
+EXPOSE 8080  
 
 # Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
