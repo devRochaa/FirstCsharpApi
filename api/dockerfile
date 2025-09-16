@@ -1,4 +1,10 @@
-# Etapa de build
+# Imagem oficial do .NET Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+WORKDIR /app
+# Porta padrão do Render
+EXPOSE 8080  
+
+# Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
@@ -8,13 +14,13 @@ RUN dotnet restore "api.csproj"
 
 # Copia todo o restante do código
 COPY . .
+WORKDIR "/src/api"
+
+# Build e publish
 RUN dotnet publish "api.csproj" -c Release -o /app/publish
 
-# Etapa final
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+# Final Stage
+FROM base AS final
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "api.dll"]
