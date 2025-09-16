@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBitcoin, FaHome, FaMoneyBill, FaTable } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 interface Props {}
 
@@ -41,8 +42,9 @@ const Sidebar = (props: Props) => {
               <span className="ml-3">Balance Sheet</span>
             </Link>
             <Link
-              to="cashflow-statement"
+              to="company-profile"
               className="md:min-w-full text-blueGray-500 text-medium uppercase font-bold pt-1 pb-4 no-underline flex items-center"
+              onClick={() => toast.warning("Workin on this page")}
             >
               <MoneyIcon />
               <span className="ml-3">Cashflow Statement</span>

@@ -8,7 +8,7 @@ import CompanyProfile from "../Components/CompanyProfile/CompanyProfile";
 import IncomeStatement from "../Components/IncomeStatement/IncomeStatement";
 import DesignPage from "../Pages/DesignPage/DesignPage";
 import BalanceSheet from "../Components/BalanceSheet/BalanceSheet";
-import CashFlowStatement from "../Components/CashFlowStatement/CashFlowStatement";
+//import CashFlowStatement from "../Components/CashFlowStatement/CashFlowStatement";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import ProtectedRoute from "./ProtectedRoute";
@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
           { path: "company-profile", element: <CompanyProfile /> },
           { path: "income-statement", element: <IncomeStatement /> },
           { path: "balance-sheet", element: <BalanceSheet /> },
-          { path: "cashflow-statement", element: <CashFlowStatement /> },
+          //          { path: "cashflow-statement", element: <CashFlowStatement /> },
         ],
       },
     ],

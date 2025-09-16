@@ -69,7 +69,7 @@ namespace api.Controllers
             await _portifolioRepo.CreateAsync(portifolioModel);
 
             if (portifolioModel == null) return StatusCode(500, "Could not create it");
-            return Created();
+            return Created($"/api/portifolio/{symbol}", symbol);
         }
 
         [HttpDelete]

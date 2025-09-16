@@ -52,11 +52,25 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
 });
 
+
 //sempre antes de builder
+// Pega a string de conexão do appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    .Replace("DB_USER", Environment.GetEnvironmentVariable("DB_USER"))
+    .Replace("DB_PASSWORD", Environment.GetEnvironmentVariable("DB_PASSWORD"));
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlServer(connectionString);
 });
+
+
+// Substituindo FMP_KEY do appsettings.json
+builder.Configuration["FMPKey"] = Environment.GetEnvironmentVariable("FMP_KEY") ?? "";
+
+// Substituindo JWT SigningKey
+builder.Configuration["JWT:SigningKey"] = Environment.GetEnvironmentVariable("SIGNING_KEY") ?? "";
+
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
@@ -119,6 +133,10 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Pega a porta do Render ou usa 5000 por padrão
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
 
 app.Run();
 
