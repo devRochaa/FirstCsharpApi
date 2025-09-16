@@ -65,6 +65,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 
+// Substituindo FMP_KEY do appsettings.json
+builder.Configuration["FMPKey"] = Environment.GetEnvironmentVariable("FMP_KEY") ?? "";
+
+// Substituindo JWT SigningKey
+builder.Configuration["JWT:SigningKey"] = Environment.GetEnvironmentVariable("SIGNING_KEY") ?? "";
+
+
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
