@@ -52,11 +52,18 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
 });
 
+
 //sempre antes de builder
+// Pega a string de conexão do appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    .Replace("DB_USER", Environment.GetEnvironmentVariable("DB_USER"))
+    .Replace("DB_PASSWORD", Environment.GetEnvironmentVariable("DB_PASSWORD"));
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlServer(connectionString);
 });
+
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
