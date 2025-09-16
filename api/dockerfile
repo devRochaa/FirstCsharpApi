@@ -9,8 +9,8 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
 # Copia apenas o csproj e restaura dependências
-COPY ["api/api.csproj", "api/"]
-RUN dotnet restore "api/api.csproj"
+COPY ["api.csproj", "./"]
+RUN dotnet restore "api.csproj"
 
 # Copia todo o restante do código
 COPY . .
