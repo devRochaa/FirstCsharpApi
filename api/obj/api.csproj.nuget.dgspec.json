@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\JunkProjects\\FinShark\\api\\api.csproj": {}
+    "C:\\JunkProjects\\FinShark\\api\\api.csproj": {}
   },
   "projects": {
-    "c:\\JunkProjects\\FinShark\\api\\api.csproj": {
+    "C:\\JunkProjects\\FinShark\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\JunkProjects\\FinShark\\api\\api.csproj",
+        "projectUniqueName": "C:\\JunkProjects\\FinShark\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "c:\\JunkProjects\\FinShark\\api\\api.csproj",
+        "projectPath": "C:\\JunkProjects\\FinShark\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Dani\\.nuget\\packages\\",
-        "outputPath": "c:\\JunkProjects\\FinShark\\api\\obj\\",
+        "outputPath": "C:\\JunkProjects\\FinShark\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -84,7 +84,7 @@
             },
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.11, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

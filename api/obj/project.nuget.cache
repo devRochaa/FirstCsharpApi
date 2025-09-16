@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "DVGw5F1O98w=",
-  "success": false,
-  "projectFilePath": "c:\\JunkProjects\\FinShark\\api\\api.csproj",
+  "dgSpecHash": "L84zykcZDu4=",
+  "success": true,
+  "projectFilePath": "C:\\JunkProjects\\FinShark\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dani\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.11\\microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
-    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.0\\microsoft.aspnetcore.cryptography.internal.7.0.0.nupkg.sha512",
-    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.0\\microsoft.aspnetcore.cryptography.keyderivation.7.0.0.nupkg.sha512",
+    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.11\\microsoft.aspnetcore.cryptography.internal.7.0.11.nupkg.sha512",
+    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.11\\microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.11\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.11.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.11\\microsoft.aspnetcore.jsonpatch.7.0.11.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.11\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.11.nupkg.sha512",
@@ -32,11 +32,11 @@
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.dependencymodel\\7.0.0\\microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
-    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.identity.core\\7.0.0\\microsoft.extensions.identity.core.7.0.0.nupkg.sha512",
+    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.identity.core\\7.0.11\\microsoft.extensions.identity.core.7.0.11.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.identity.stores\\7.0.11\\microsoft.extensions.identity.stores.7.0.11.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
+    "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.identity.client\\4.47.2\\microsoft.identity.client.4.47.2.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\2.19.3\\microsoft.identity.client.extensions.msal.2.19.3.nupkg.sha512",
@@ -86,17 +86,5 @@
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
     "C:\\Users\\Dani\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Aviso como Erro: Downgrade de pacote detectado: Microsoft.Extensions.Identity.Core de 7.0.11 para 7.0.0. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. \r\n api -> Microsoft.AspNetCore.Identity.EntityFrameworkCore 7.0.11 -> Microsoft.Extensions.Identity.Stores 7.0.11 -> Microsoft.Extensions.Identity.Core (>= 7.0.11) \r\n api -> Microsoft.Extensions.Identity.Core (>= 7.0.0)",
-      "projectPath": "c:\\JunkProjects\\FinShark\\api\\api.csproj",
-      "filePath": "c:\\JunkProjects\\FinShark\\api\\api.csproj",
-      "libraryId": "Microsoft.Extensions.Identity.Core",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }
